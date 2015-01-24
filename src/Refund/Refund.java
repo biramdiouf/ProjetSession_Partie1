@@ -16,7 +16,7 @@ import net.sf.json.JSONObject;
 
 **** Latifa DAMOUH DAML11538206
 
-**** Sham Kadi KADS06568801
+**** Siham Kadi KADS06568801
  **/
 public class Refund {
      public static void main(String[] args) {
