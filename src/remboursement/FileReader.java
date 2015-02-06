@@ -1,4 +1,4 @@
-package Refund;
+package remboursement;
 
 /*
  * Copyright 2011 Jacques Berger.
