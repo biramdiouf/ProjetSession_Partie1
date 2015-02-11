@@ -11,12 +11,14 @@ package remboursement;
  **** Siham Kadi KADS06568801
  *
  */
+
 import java.text.DecimalFormat;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
-public class Reclamations implements Contrat{
+public class Reclamations implements Contrat {
+
     public JSONObject traiterReclamations(String fichier) {
 
         String mnt;
@@ -32,7 +34,7 @@ public class Reclamations implements Contrat{
         JSONArray reclamationsArray = JSONArray.fromObject(reclamationsRemboursements.get("reclamations"));
 
         for (int i = 0; i < reclamationsArray.size(); i++) {
-        	
+
             JSONObject reclamationArray = reclamationsArray.getJSONObject(i);
             // Creation de tableau representant un remboursement
             JSONObject remboursementArray = new JSONObject();
@@ -117,5 +119,5 @@ public class Reclamations implements Contrat{
 
         return remboursements;
     }
-    
+
 }

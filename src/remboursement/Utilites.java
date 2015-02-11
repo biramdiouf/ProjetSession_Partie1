@@ -12,7 +12,6 @@ package remboursement;
  **** Siham Kadi KADS06568801
  *
  */
-
 import static java.lang.Integer.parseInt;
 
 import java.io.File;
@@ -27,8 +26,8 @@ import java.util.Date;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
-public class Utilites implements Contrat{
-	
+public class Utilites implements Contrat {
+
     public static boolean estNumerique(String chaine) {
         boolean esUnNombre = true;
 
@@ -40,6 +39,7 @@ public class Utilites implements Contrat{
 
         return esUnNombre;
     }
+
     public static String getMontantSoin(String str) {
         String valeurString = "";
         if (str.length() > 0 && str.charAt(str.length() - 1) == '$') {
@@ -47,7 +47,6 @@ public class Utilites implements Contrat{
         }
         return valeurString;
     }
-
 
     public static boolean validerDateSoin(String dateSoin, String moisContrat) {
 
@@ -201,7 +200,7 @@ public class Utilites implements Contrat{
 
         return estValide;
     }
-    
+
     public static void creerFichierSortie(JSONObject remboursements, String nomFichierSortie) {
         File file = new File(nomFichierSortie);
         if (!file.exists()) {
@@ -218,6 +217,6 @@ public class Utilites implements Contrat{
 
         }
 
-    }   
+    }
 
 }

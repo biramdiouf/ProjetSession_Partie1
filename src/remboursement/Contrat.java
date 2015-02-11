@@ -15,11 +15,11 @@ package remboursement;
 public interface Contrat {
 
     public static final String CONTRAT_TYPE_A = "A";
-    
+
     public static final String CONTRAT_TYPE_B = "B";
-    
+
     public static final String CONTRAT_TYPE_C = "C";
-    
+
     public static final String CONTRAT_TYPE_D = "D";
 
     public static final int[] NUMERO_SOIN_ARRAY = {0, 100, 200, 300, 399, 400, 500, 600, 700};

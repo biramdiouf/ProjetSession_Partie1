@@ -14,39 +14,36 @@ package remboursement;
  */
 import net.sf.json.JSONObject;
 
-public class Main  {
-	
+public class Main {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		JSONObject fichierSortie;
+        JSONObject fichierSortie;
 
-		if ((args.length != 2) || !args[0].endsWith(".json")
-				|| !args[1].endsWith(".json")) {
-			fichierSortie = new JSONObject();
-			fichierSortie.accumulate("message:", "Données invalides");
-		} else {
-			try {
-				String fichierEntree = FileReader.loadFileIntoString(args[0],
-						"utf-8");
+        if ((args.length != 2) || !args[0].endsWith(".json")
+                || !args[1].endsWith(".json")) {
+            fichierSortie = new JSONObject();
+            fichierSortie.accumulate("message:", "Données invalides");
+        } else {
+            try {
+                String fichierEntree = FileReader.loadFileIntoString(args[0],
+                        "utf-8");
 
-				if (Utilites.validerFichierJson(fichierEntree)) {
-					Reclamations reclam = new Reclamations();
-					fichierSortie = reclam.traiterReclamations(fichierEntree);
-				} else {
-					fichierSortie = new JSONObject();
-					fichierSortie.accumulate("message:", "Données invalides");
-				}
+                if (Utilites.validerFichierJson(fichierEntree)) {
+                    Reclamations reclam = new Reclamations();
+                    fichierSortie = reclam.traiterReclamations(fichierEntree);
+                } else {
+                    fichierSortie = new JSONObject();
+                    fichierSortie.accumulate("message:", "Données invalides");
+                }
 
-			} catch (Exception ex) {
-				fichierSortie = new JSONObject();
-				fichierSortie.accumulate("message:", "Données invalides");
-			}
-		}
-		
-		Utilites.creerFichierSortie(fichierSortie, args[1]);
-	}
+            } catch (Exception ex) {
+                fichierSortie = new JSONObject();
+                fichierSortie.accumulate("message:", "Données invalides");
+            }
+        }
 
-
+        Utilites.creerFichierSortie(fichierSortie, args[1]);
+    }
 
 }
